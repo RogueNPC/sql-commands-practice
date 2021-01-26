@@ -35,13 +35,12 @@ VALUES
 
 /* Queries */
 
-SELECT * FROM Songs;
+-- SELECT * FROM Songs;
 
-SELECT * FROM Albums;
+-- SELECT * FROM Albums;
 
-/* 
- * TODO: Write a table join query to construct a table of Song Name : Album Name
- */
+SELECT Songs.name, Albums.name FROM Albums
+JOIN Songs ON Albums.id = Songs.album_id
 
 /*
  * TODO: Find all albums published between 1970 and 1980.
