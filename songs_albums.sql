@@ -1,8 +1,9 @@
 CREATE TABLE Songs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(70) NOT NULL,
+    album_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES Albums(id)
-)
+);
 
 CREATE TABLE Albums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -11,15 +12,16 @@ CREATE TABLE Albums (
     year_published INTEGER NOT NULL
 );
 
-INSERT INTO SONGS
-    (name)
+INSERT INTO Songs
+    (name, album_id)
 VALUES
-    ('Time')
-    ('Money')
-    ('Come Together')
-    ('Downbound Train')
-    ('Cynical')
- 
+    ('Time', 1),
+    ('Money', 1),
+    ('Come Together', 2),
+    ('Downbound Train', 4),
+    ('Cynical', 5)
+; 
+
 INSERT INTO Albums
     (name, artist, year_published)
 VALUES
@@ -33,7 +35,7 @@ VALUES
 
 /* Queries */
 
--- SELECT * FROM Songs;
+SELECT * FROM Songs;
 
 SELECT * FROM Albums;
 
