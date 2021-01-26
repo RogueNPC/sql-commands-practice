@@ -44,10 +44,10 @@ VALUES
 
 -- SELECT name, year_published FROM Albums WHERE year_published >= 1970 AND year_published <= 1980
 
-SELECT Songs.name, year_published FROM Albums
-JOIN Songs ON Albums.id = Songs.album_id
-WHERE year_published >= 1970 AND year_published <= 1980
+-- SELECT Songs.name, year_published FROM Albums
+-- JOIN Songs ON Albums.id = Songs.album_id
+-- WHERE year_published >= 1970 AND year_published <= 1980
 
-/*
- * TODO: Find all songs on albums with names containing 'California'.
- */
+SELECT Songs.name, Albums.name FROM Albums
+JOIN Songs ON Albums.id = Songs.album_id
+WHERE Albums.name LIKE '%California%'
