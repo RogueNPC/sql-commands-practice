@@ -1,11 +1,8 @@
-/*
- * TODO: Create a table called 'songs' that has the following fields:
- * - id - integer, primary key
- * - name - string
- * - album_id - foreign key
- * 
- * Note that album - song is a one-to-many relationship, so no bridge table is needed.
- */
+CREATE TABLE Songs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(70) NOT NULL,
+    FOREIGN KEY (album_id) REFERENCES Albums(id)
+)
 
 CREATE TABLE Albums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,9 +11,14 @@ CREATE TABLE Albums (
     year_published INTEGER NOT NULL
 );
 
-/* 
- * TODO: Insert at least 4 rows of data into the songs table. You can change up the albums as well. :)
- */
+INSERT INTO SONGS
+    (name)
+VALUES
+    ('Time')
+    ('Money')
+    ('Come Together')
+    ('Downbound Train')
+    ('Cynical')
  
 INSERT INTO Albums
     (name, artist, year_published)
